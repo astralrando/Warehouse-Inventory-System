@@ -1,5 +1,7 @@
 #   I can't go to hell. I'm all out of vacation days :/
 
+addToZone = False
+
 i101 = ['1A-101-A1', "1A-101-A2", '1A-101-A3', '1A-101-A4', '1A-101-A5', '1A-101-A6',
         '1A-101-B1', '1A-101-B2', '1A-101-B3', '1A-101-B4', '1A-101-B5', '1A-101-B6',
         '1A-101-C1', '1A-101-C2', '1A-101-C3', '1A-101-C4', '1A-101-C5', '1A-101-C6',
@@ -24,30 +26,19 @@ i104 = ['1A-104-A1', "1A-104-A2", '1A-104-A3', '1A-104-A4', '1A-104-A5', '1A-104
         '1A-104-D1', '1A-104-D2', '1A-104-D3', '1A-104-D4', '1A-104-D5', '1A-104-D6',
         '1A-104-E1', '1A-104-E2', '1A-104-E3', '1A-104-E4', '1A-104-E5', '1A-104-E6']
 
-z1A = [i101, i102, i103]
+z1A = [i101, i102, i103, i104]
 totesInz1A = []
 
-needs = ['1A-101-B4', '1A-102-E4']
+needs = ['1A-101-B4', '1A-102-E4', '1A-103-B3', 'B1-101-A1']
 
 for need in needs:
     for item in z1A:
         if need in item:
-            print(True)
+            print('added')
+            addToZone = True
 
-
-
-# itemsA = [1, 2, 3]
-# itemsB = [4, 5, 6]
-# itemsC = [7, 8, 9]
-
-# zone = [itemsA, itemsB, itemsC]
-
-# needs = [1, 4, 7]
-
-# for need in needs:
-
-#     for item in zone:
-#         if need in item:
-#             print(True)
-#         else:
-#             print(False)
+if addToZone == True:
+    print(True)
+    totesInz1A.append(needs)
+    print(totesInz1A)
+    addToZone = False
