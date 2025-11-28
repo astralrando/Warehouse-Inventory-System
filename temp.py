@@ -10,3 +10,4 @@ while addingTotes:
     adding[tote] = []
     adding[tote].append(needs)
     print(adding)
+    print(adding.get(tote))

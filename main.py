@@ -1,11 +1,10 @@
 #   Sorry, little weirdo. Threats won't work on me. 
 #   I can't go to hell. I'm all out of vacation days :/
 
-circulating = []
+circulating = {}
 addToZone = False
 
 while True:
-        print(circulating)
 
         i101 = ['1A-101-A1', "1A-101-A2", '1A-101-A3', '1A-101-A4', '1A-101-A5', '1A-101-A6',
         '1A-101-B1', '1A-101-B2', '1A-101-B3', '1A-101-B4', '1A-101-B5', '1A-101-B6',
@@ -33,10 +32,7 @@ while True:
 
         z1A = [i101, i102, i103, i104]
 
-        totesInz1A = []
-
-        if len(circulating) > 0:
-               print(circulating[0])
+        totesInz1A = {}
 
         for need in circulating:
             for item in z1A:
@@ -44,8 +40,7 @@ while True:
                         print('added')
                         addToZone = True
 
-        if addToZone == True:
-                pass
+        print(circulating.get(0))
 
 
 # MenuState System
@@ -62,7 +57,7 @@ while True:
                 tote = input("Tote name: ")
                 if tote == "end":
                         break
-                adding[tote] = input("Input need SIN: ")
-                circulating.append(adding)
+                adding[tote] = input("Input need SKU: ")
+                circulating.update(adding)
                 adding = {}
                 print(f'Circulating: {circulating}')
