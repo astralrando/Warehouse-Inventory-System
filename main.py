@@ -34,13 +34,15 @@ while True:
 
         totesInz1A = {}
 
-        for need in circulating:
-            for item in z1A:
-                if need in item:
-                        print('added')
-                        addToZone = True
 
-        print(circulating.get(0))
+
+        if len(circulating) > 0:
+                circulating_list = list(circulating.values())
+                for item in z1A:
+                        if circulating_list[0] in item:
+                                totesInz1A.update(circulating)
+                                circulating.popitem()
+                                print(totesInz1A)
 
 
 # MenuState System
@@ -61,3 +63,7 @@ while True:
                 circulating.update(adding)
                 adding = {}
                 print(f'Circulating: {circulating}')
+
+        if menuState == 2:
+                print(f'Circulating line: {circulating}')
+                print(f'In zone 1A: {totesInz1A}')
