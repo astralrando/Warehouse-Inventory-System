@@ -1,13 +1,17 @@
-adding = {}
-circulating = {}
-addingTotes = True
+totes = []
+circulating = []
 
-while addingTotes:
-    tote = input("Name your child: ")
 
-    needs = input("Input Needs: ")
+name = input("Name tote: ")
+items = []
 
-    adding[tote] = []
-    adding[tote].append(needs)
-    print(adding)
-    print(adding.get(tote))
+while True:
+    item = input("Add item (blank to stop): ")
+    if item == "":
+        break
+    items.append(item)
+
+tote = {"name": name, "items": items}
+totes.append(tote)
+
+print(totes)
