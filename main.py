@@ -3,8 +3,9 @@
 
 totesInz1A = []
 totesInz2A = []
-circulating = []
+circulating = [{"name": "pt001", "items": ['33244']}]
 addToZone = False
+zones = ["z1a", "z2A"]
 
 while True:
 
@@ -76,7 +77,7 @@ while True:
                                 break
 
 # MenuState System
-        menus = ['1: Tote Induction', '2: Zone Checking', '3: Manual Zone Entry']
+        menus = ['0: Zone Checker', '1: Tote Induction', '2: Zone Scanner']
         for item in menus:
                 print(item)
         menuState = int(input("Select a menu: "))
@@ -102,4 +103,8 @@ while True:
                 print(f'in zone 2A: {totesInz2A}')
         
         if menuState == 2:
-                pass
+                enter_zone = input("Enter a zone: ")
+                if enter_zone in zones:
+                        
+                        pass
+                                
