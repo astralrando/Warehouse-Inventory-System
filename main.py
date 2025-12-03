@@ -59,22 +59,22 @@ while True:
                 '2A-104-E1', '2A-104-E2', '2A-104-E3', '2A-104-E4', '2A-104-E5', '2A-104-E6']
 
         # Checks for circulating totes that need picks in the zone
-        for tote in circulating:
-                for item in tote['items']:
-                        if item in z1A:
-                                print("Item is in zone: 1A")
-                                totesInz1A.append(circulating[0])
-                                circulating.pop(0)
-                                print(f'Totes in zone 1A: {totesInz1A}')
-                                print(f'Totes circulating: {circulating}')
-                                break
-                        if item in z2A:
-                                print("Item is in zone: 2A")
-                                totesInz1A.append(circulating[0])
-                                circulating.pop(0)
-                                print(f'Totes in zone 1A: {totesInz2A}')
-                                print(f'Totes circulating: {circulating}')
-                                break
+        # for tote in circulating:
+        #         for item in tote['items']:
+        #                 if item in z1A:
+        #                         print("Item is in zone: 1A")
+        #                         totesInz1A.append(circulating[0])
+        #                         circulating.pop(0)
+        #                         print(f'Totes in zone 1A: {totesInz1A}')
+        #                         print(f'Totes circulating: {circulating}')
+        #                         break
+        #                 if item in z2A:
+        #                         print("Item is in zone: 2A")
+        #                         totesInz1A.append(circulating[0])
+        #                         circulating.pop(0)
+        #                         print(f'Totes in zone 1A: {totesInz2A}')
+        #                         print(f'Totes circulating: {circulating}')
+        #                         break
 
 # MenuState System
         menus = ['0: Zone Checker', '1: Tote Induction', '2: Zone Scanner']
@@ -105,6 +105,5 @@ while True:
         if menuState == 2:
                 enter_zone = input("Enter a zone: ")
                 if enter_zone in zones:
-                        
-                        pass
+                        print(True)
                                 
