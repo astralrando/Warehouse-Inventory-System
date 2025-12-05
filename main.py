@@ -3,14 +3,15 @@
 
 totesInz1A = []
 totesInz2A = []
-circulating = [{"name": "pt001", "items": ['33244']}]
+circulating = [{"name": "pt001", "items": ['1A-101-A1']}]
 addToZone = False
 zones = ["z1a", "z2A"]
+menuState = 0
 
 while True:
 
         # Enter main zones
-        z1A = ['1A-101-A1', "1A-101-A2", '1A-101-A3', '1A-101-A4', '1A-101-A5', '1A-101-A6',
+        z1A = [ '1A-101-A1', '1A-101-A2', '1A-101-A3', '1A-101-A4', '1A-101-A5', '1A-101-A6',
                 '1A-101-B1', '1A-101-B2', '1A-101-B3', '1A-101-B4', '1A-101-B5', '1A-101-B6',
                 '1A-101-C1', '1A-101-C2', '1A-101-C3', '1A-101-C4', '1A-101-C5', '1A-101-C6',
                 '1A-101-D1', '1A-101-D2', '1A-101-D3', '1A-101-D4', '1A-101-D5', '1A-101-D6',
@@ -34,7 +35,7 @@ while True:
                 '1A-104-D1', '1A-104-D2', '1A-104-D3', '1A-104-D4', '1A-104-D5', '1A-104-D6',
                 '1A-104-E1', '1A-104-E2', '1A-104-E3', '1A-104-E4', '1A-104-E5', '1A-104-E6']
 
-        z2A = ['2A-101-A1', '2A-101-A2', '2A-101-A3', '2A-101-A4', '2A-101-A5', '2A-101-A6',
+        z2A = [ '2A-101-A1', '2A-101-A2', '2A-101-A3', '2A-101-A4', '2A-101-A5', '2A-101-A6',
                 '2A-101-B1', '2A-101-B2', '2A-101-B3', '2A-101-B4', '2A-101-B5', '2A-101-B6',
                 '2A-101-C1', '2A-101-C2', '2A-101-C3', '2A-101-C4', '2A-101-C5', '2A-101-C6',
                 '2A-101-D1', '2A-101-D2', '2A-101-D3', '2A-101-D4', '2A-101-D5', '2A-101-D6',
@@ -58,26 +59,30 @@ while True:
                 '2A-104-D1', '2A-104-D2', '2A-104-D3', '2A-104-D4', '2A-104-D5', '2A-104-D6',
                 '2A-104-E1', '2A-104-E2', '2A-104-E3', '2A-104-E4', '2A-104-E5', '2A-104-E6']
 
+        SpecialPick = []
+
         # Checks for circulating totes that need picks in the zone
-        # for tote in circulating:
-        #         for item in tote['items']:
-        #                 if item in z1A:
-        #                         print("Item is in zone: 1A")
-        #                         totesInz1A.append(circulating[0])
-        #                         circulating.pop(0)
-        #                         print(f'Totes in zone 1A: {totesInz1A}')
-        #                         print(f'Totes circulating: {circulating}')
-        #                         break
-        #                 if item in z2A:
-        #                         print("Item is in zone: 2A")
-        #                         totesInz1A.append(circulating[0])
-        #                         circulating.pop(0)
-        #                         print(f'Totes in zone 1A: {totesInz2A}')
-        #                         print(f'Totes circulating: {circulating}')
-        #                         break
+        if menuState == 11:
+                for tote in circulating:
+                        for item in tote['items']:
+                                if item in z1A:
+                                        print("Item is in zone: 1A")
+                                        totesInz1A.append(circulating[0])
+                                        circulating.pop(0)
+                                        print(f'Totes in zone 1A: {totesInz1A}')
+                                        print(f'Totes circulating: {circulating}')
+                                        break
+                                if item in z2A:
+                                        print("Item is in zone: 2A")
+                                        totesInz1A.append(circulating[0])
+                                        circulating.pop(0)
+                                        print(f'Totes in zone 1A: {totesInz2A}')
+                                        print(f'Totes circulating: {circulating}')
+                                        break
 
 # MenuState System
-        menus = ['0: Zone Checker', '1: Tote Induction', '2: Zone Scanner']
+        menus = ['0: Zone Checker', '1: Tote Induction', '2: Zone Scanner (1A)', '11: Auto Zone Entry']
+        print('')
         for item in menus:
                 print(item)
         menuState = int(input("Select a menu: "))
@@ -98,12 +103,14 @@ while True:
                 circulating.append(tote)
 
         if menuState == 0:
+                print("")
                 print(f'Circulating line: {circulating}')
                 print(f'In zone 1A: {totesInz1A}')
                 print(f'in zone 2A: {totesInz2A}')
         
         if menuState == 2:
-                enter_zone = input("Enter a zone: ")
-                if enter_zone in zones:
-                        print(True)
-                                
+                enter_tote = input("Enter a tote: ")
+                for item in tote['items']:
+                        if item in z1A:
+                                z1A.append(enter_tote)
+                                circulating.pop()
