@@ -2,12 +2,16 @@
 
 totesIni1 = []
 totesIni2 = []
-circulating = [{"name": "pt001", "items": ['i1-e3']}]
+circulating = []
 addToZone = False
-zones = ["z1a", "z2A"]
 menuState = 0
 
 while True:
+
+        # test zone
+        i1 = [{'isle': 'i1-a1', 'sku': 1, 'quantity': 10}, {'isle': 'i1-a2', 'sku': 2, 'quantity': 5},
+              {'isle': 'i1-a3', 'sku': 3, 'quantity': 20}, {'isle': 'i1-a4', 'sku': 4, 'quantity': 25}]
+        print(i1[0])
 
         # Zones Init
         i1 = [ 'i1-a1', 'i1-a2', 'i1-a3', 'i1-a4', 'i1-a5', 'i1-a6',
@@ -35,21 +39,19 @@ while True:
                                 if item in i1:
                                         print("Item is in zone: i1")
                                         totesIni1.append(circulating[0])
-                                        totesIni1.pop(0)
                                         print(f'Totes in zone i1: {totesIni1}')
                                         print(f'Totes circulating: {circulating}')
                                         break
                                 if item in i2:
                                         print("Item is in zone: i2")
                                         totesIni2.append(circulating[0])
-                                        totesIni1.pop(0)
                                         print(f'Totes in zone i2: {totesIni2}')
                                         print(f'Totes circulating: {circulating}')
                                         break
 
 # MenuState System
         menus = ['0: Zone Checker', '1: Tote Induction', '2: Zone Scanner (i1)',
-                 '3: SKU Picking', '11: Auto Zone Entry']
+                 '3: SKU Picking', '4: Repleneshment', '11: Auto Zone Entry']
         print('')
         for item in menus:
                 print(item)
@@ -66,32 +68,36 @@ while True:
 
                 toteName = input("Name tote: ")
                 items = []
+                in_tote = []
 
                 while True:
-                        item = input("Input SKU (leave blank to quit): ")
+                        item = input("Input Need (leave blank to quit): ")
                         if item == "":
                                 break
                         items.append(item)
                 
-                tote = {"name": toteName, "items": items}
+                tote = {"name": toteName, "items": items, "in_tote": in_tote}
                 circulating.append(tote)
-
         
         if menuState == 2:
                 enter_tote = input("Enter a tote: ")
                 for item in tote['items']:
                         if item in i1:
-                                i1.append(enter_tote)
-                                circulating.pop(tote)
+                                print(True)
+                                totesIni1.append(enter_tote)
         
         if menuState == 3:
                 on_cart = []
                 zone = input("Zone ID: ")
                 cart = input("Cart ID: ")
-                if zone in zones:
-                        print(True)
+
                 while True:
                         pick_tote = input("Enter Tote: ")
                         if pick_tote == "":
                                 break
-                on_cart.append(pick_tote)
+                        if pick_tote not in zone:
+                                print("No picks in this zone")
+                        on_cart.append(pick_tote)
+        
+        if menuState == 4:
+                pass
