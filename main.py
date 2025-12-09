@@ -59,12 +59,14 @@ while True:
         menuState = int(input("Select a menu: "))
 
         if menuState == 0:
+                # Zone Check
                 print("")
                 print(f'Circulating line: {circulating}')
                 print(f'In zone i1: {totesIni1}')
                 print(f'in zone i2: {totesIni2}')
 
         if menuState == 1:
+                # Induction
                 print("Tote induction")
 
                 toteName = input("Name tote: ")
@@ -81,6 +83,7 @@ while True:
                 circulating.append(tote)
         
         if menuState == 2:
+                # Zone Scanner
                 enter_tote = input("Enter a tote: ")
                 for item in tote['items']:
                         if item in i1:
@@ -88,6 +91,7 @@ while True:
                                 totesIni1.append(enter_tote)
         
         if menuState == 3:
+                # Picking
                 on_cart = []
                 zone = input("Zone ID: ")
                 cart = input("Cart ID: ")
@@ -101,7 +105,9 @@ while True:
                         on_cart.append(pick_tote)
         
         if menuState == 4:
+                # Replenishment
                 pass
 
         if menuState == 5:
-                print(temp.data)
+                # Temp Test
+                print(temp.jsondata)
