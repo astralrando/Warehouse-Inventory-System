@@ -1,4 +1,5 @@
 #   I can't go to hell. I'm all out of vacation days :/
+import temp
 
 totesIni1 = []
 totesIni2 = []
@@ -11,7 +12,7 @@ while True:
         # test zone
         i1 = [{'isle': 'i1-a1', 'sku': 1, 'quantity': 10}, {'isle': 'i1-a2', 'sku': 2, 'quantity': 5},
               {'isle': 'i1-a3', 'sku': 3, 'quantity': 20}, {'isle': 'i1-a4', 'sku': 4, 'quantity': 25}]
-        print(i1[0])
+        # print(i1[0])
 
         # Zones Init
         i1 = [ 'i1-a1', 'i1-a2', 'i1-a3', 'i1-a4', 'i1-a5', 'i1-a6',
@@ -51,7 +52,7 @@ while True:
 
 # MenuState System
         menus = ['0: Zone Checker', '1: Tote Induction', '2: Zone Scanner (i1)',
-                 '3: SKU Picking', '4: Repleneshment', '11: Auto Zone Entry']
+                 '3: SKU Picking', '4: Repleneshment', '5: Temp Test', '11: Auto Zone Entry']
         print('')
         for item in menus:
                 print(item)
@@ -101,3 +102,6 @@ while True:
         
         if menuState == 4:
                 pass
+
+        if menuState == 5:
+                print(temp.data)

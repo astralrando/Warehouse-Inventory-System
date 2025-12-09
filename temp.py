@@ -1,28 +1,12 @@
 import json
 
-menustate = 0
-
-menustate = int(input("Enter menustate: "))
-
 with open("data.json", "r") as file:
     data = file.read()
-    print(data)
+    jsondata = json.loads(data)
 
-if menustate == 1:
-    with open("data.json", "w") as file:
+jsondata[0]['quantity']-=1
 
-        data = json.loads(data)
-
-        something = ["something", "other thing"]
-
-        thing = ["oops i killed it"]
-
-        for item in something:
-            thing.append(item)
-        
-        data = data + thing
-
-        thing = json.dumps(thing)
-        file.write(thing)
-
-    print(thing)
+with open("data.json", "w") as file:
+    packfile = json.dumps(jsondata)
+    file.write(packfile)
+print(packfile)
