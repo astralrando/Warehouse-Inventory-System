@@ -34,7 +34,7 @@ while True:
                 'isp-e1', 'isp-e2', 'isp-e3', 'isp-e4', 'isp-e5', 'isp-e6',]
 
         # Checks for circulating totes that need picks in zones
-        if menuState == 11:
+        if menuState == 6:
                 for tote in circulating:
                         for item in tote['items']:
                                 if item in i1:
@@ -52,7 +52,7 @@ while True:
 
 # MenuState System
         menus = ['0: Zone Checker', '1: Tote Induction', '2: Zone Scanner (i1)',
-                 '3: SKU Picking', '4: Repleneshment', '5: Temp Test', '11: Auto Zone Entry']
+                 '3: SKU Picking', '4: Repleneshment', '5: Temp Test', '6: Auto Zone Entry']
         print('')
         for item in menus:
                 print(item)
@@ -83,7 +83,7 @@ while True:
                 circulating.append(tote)
         
         if menuState == 2:
-                # Zone Scanner
+                # Zone Scanner WIP
                 enter_tote = input("Enter a tote: ")
                 for item in tote['items']:
                         if item in i1:
@@ -91,7 +91,7 @@ while True:
                                 totesIni1.append(enter_tote)
         
         if menuState == 3:
-                # Picking
+                # Picking WIP
                 on_cart = []
                 zone = input("Zone ID: ")
                 cart = input("Cart ID: ")
@@ -105,8 +105,8 @@ while True:
                         on_cart.append(pick_tote)
         
         if menuState == 4:
-                # Replenishment
-                pass
+                # Replenishment WIP
+                location = input("Enter location to replenish: ")
 
         if menuState == 5:
                 # Temp Test
