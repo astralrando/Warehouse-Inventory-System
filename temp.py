@@ -1,33 +1,28 @@
-import pygame
-import sys
+import json
 
-pygame.init()
+menustate = 0
 
-screen_width, screen_height = 800, 600
-screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Pygame Text Example")
+menustate = int(input("Enter menustate: "))
 
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-BLUE = (0, 0, 255)
+with open("data.json", "r") as file:
+    data = file.read()
+    print(data)
 
-font = pygame.font.SysFont('arial', 30)
+if menustate == 1:
+    with open("data.json", "w") as file:
 
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-    
-    screen.fill(BLACK)
+        data = json.loads(data)
 
-    text_surface = font.render("System for the thing test with GUI", True, BLUE)
-    
-    text_rect = text_surface.get_rect(center=(screen_width/2, screen_height/2))
+        something = ["something", "other thing"]
 
-    screen.blit(text_surface, text_rect)
+        thing = ["oops i killed it"]
 
-    pygame.display.update()
+        for item in something:
+            thing.append(item)
+        
+        data = data + thing
 
-pygame.quit()
-sys.exit()
+        thing = json.dumps(thing)
+        file.write(thing)
+
+    print(thing)
