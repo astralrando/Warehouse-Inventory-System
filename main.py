@@ -52,7 +52,8 @@ while True:
 
 # MenuState System
         menus = ['0: Zone Checker', '1: Tote Induction', '2: Zone Scanner (i1)',
-                 '3: SKU Picking', '4: Repleneshment', '5: Temp Test', '6: Auto Zone Entry']
+                 '3: SKU Picking', '4: Repleneshment', '5: Temp Test', '6: Auto Zone Entry',
+                 '7: Enter Task']
         print('')
         for item in menus:
                 print(item)
@@ -111,3 +112,9 @@ while True:
         if menuState == 5:
                 # Temp Test
                 print(temp.jsondata)
+
+        if menuState == 7:
+                # Enter Container
+                enter_container = input("Enter tote: ")
+                for tote in circulating:
+                        print(tote)

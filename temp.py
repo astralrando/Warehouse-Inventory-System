@@ -1,5 +1,4 @@
 import json
-import main
 
 with open("data.json", "r") as file:
     data = file.read()
@@ -17,4 +16,4 @@ if run == True:
 
 def replenish(count):
     with open("data.json", "w") as file:
-        toreplenish = jsondata[main.location]["quantity"]
+        pass
