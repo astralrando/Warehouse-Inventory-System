@@ -1,3 +1,5 @@
-[{"location": "i1-a1", "sku": "001", "quantity": 10}, 
-{"location": "i1-b1", "sku": "002", "quantity": 10},
-{"location": "i1-c1", "sku": "003", "quantity": 10}]
+[{"location": "i1-a1", "sku": "001", "quantity": 10, "totesInZone": []}, 
+{"location": "i1-b1", "sku": "002", "quantity": 10, "totesInZone": []},
+{"location": "i1-c1", "sku": "003", "quantity": 10, "totesInZone": []},
+{"location": "i1-d1", "sku": "003", "quantity": 10, "totesInZone": []},
+{"location": "i1-e1", "sku": "003", "quantity": 10, "totesInZone": []}]
