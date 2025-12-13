@@ -1,1 +1,1 @@
-[{"name": "pt1", "inTote": [], "needs": []}, {"name": "pt2", "inTote": [], "needs": []}]
+[{"name": "pt1", "inTote": [], "needs": ["001", "003", "005"]}]

@@ -45,7 +45,7 @@ while True:
         toteName = input("Enter tote: ")
         while True:
             need = input("Input tote needs (leave blank to exit): ")
-            if need == "":
+            if need == '':
                 break
             needs.append(need)
         tote = {"name": toteName, "inTote": [], "needs": needs}
@@ -65,3 +65,10 @@ while True:
         with open("totes.json", "w") as totedata:
             totepack = json.dumps(totes)
             totedata.write(totepack)
+    
+    # Picking
+    if menustate == 4:
+        pickzone = input("Enter Zone: ")
+        for item in zones:
+            if item['location'] == pickzone:
+                print(item['location'])
