@@ -13,7 +13,7 @@
 import json
 
 # Initial variables
-menustates = ["1: System Check", "2: Induction", "3: Tote eraser"]
+menustates = ["1: System Check", "2: Induction", "3: Tote eraser", "4: Pick Tote"]
 menustate = 0
 
 # Get data from JSON files
