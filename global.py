@@ -11,12 +11,13 @@
 #Enter task
 
 import json
+import JSON_Parser
 
 # Initial variables
 menustates = ["1: System Check", "2: Induction", "3: Tote eraser", "4: Pick Tote"]
 menustate = 0
 
-# Get data from JSON files
+#   Parse JSON files
 with open("data.json", "r") as zone:
     jsondata = zone.read()
     zones = json.loads(jsondata)

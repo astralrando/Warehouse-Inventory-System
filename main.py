@@ -1,5 +1,5 @@
 #   I can't go to hell. I'm all out of vacation days :/
-import temp
+import JSON_Parser
 
 totesIni1 = []
 totesIni2 = []
@@ -111,7 +111,7 @@ while True:
 
         if menuState == 5:
                 # Temp Test
-                print(temp.jsondata)
+                print(JSON_Parser.jsondata)
 
         if menuState == 7:
                 # Enter Container
