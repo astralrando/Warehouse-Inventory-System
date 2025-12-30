@@ -3,6 +3,7 @@ print("I can't go to hell. I'm all out of vacation days :/")
 #TODO
 #Induction \/
 #Tote eraser \/
+#Zone creation
 #Picking
 #Zone scanners
 #Replenishment
@@ -79,3 +80,12 @@ while True:
         for item in zones:
             if item['location'] == scannerZone:
                 print(item['location'])
+                while True:
+                    toteScan = input("Scan tote (leave blank to exit): ")
+                    if toteScan == '':
+                        break
+                    for tote in totes:
+                        if tote['name'] == toteScan:
+                            print(toteScan)
+                        else:
+                            print("Invalid tote")
