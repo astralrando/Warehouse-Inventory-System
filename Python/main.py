@@ -17,11 +17,11 @@ menustates = ["1: System Check", "2: Induction", "3: Tote eraser", "4: Pick Tote
 menustate = 0
 
 #   Parse JSON files
-with open("data.json", "r") as zone:
+with open("./Data/data.json", "r") as zone:
     jsondata = zone.read()
     zones = json.loads(jsondata)
 
-with open("totes.json", "r") as totes:
+with open("./Data/totes.json", "r") as totes:
     totedata = totes.read()
     totes = json.loads(totedata)
 
