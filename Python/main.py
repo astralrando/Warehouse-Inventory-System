@@ -4,30 +4,29 @@ print("I can't go to hell. I'm all out of vacation days :/")
 #Induction \/
 #Tote eraser \/
 #Picking
+#Zone scanners
 #Replenishment
 #Zone entry
-#Zone scanners
 #Special pick inplementation
 #Enter task
 
 import json
 
 # Initial variables
-menustates = ["1: System Check", "2: Induction", "3: Tote eraser", "4: Pick Tote"]
+menustates = ["1: System Check", "2: Induction", "3: Tote Eraser",
+              "4: Pick Tote", "5: Zone Scanner"]
 menustate = 0
 
-#   Parse JSON files
-with open("./Data/data.json", "r") as zone:
-    jsondata = zone.read()
-    zones = json.loads(jsondata)
-
-with open("./Data/totes.json", "r") as totes:
-    totedata = totes.read()
-    totes = json.loads(totedata)
-
-print(totes)
-
 while True:
+#   Parse JSON files
+    with open("./Data/data.json", "r") as zone:
+        jsondata = zone.read()
+        zones = json.loads(jsondata)
+
+    with open("./Data/totes.json", "r") as totes:
+        totedata = totes.read()
+        totes = json.loads(totedata)
+
     for item in menustates:
         print(item)
     menustate = int(input("Enter Menustate: "))
@@ -51,7 +50,7 @@ while True:
         tote = {"name": toteName, "inTote": [], "needs": needs}
         totes.append(tote)
         print(totes)
-        with open("totes.json", "w") as totedata:
+        with open("./Data/totes.json", "w") as totedata:
             totepack = json.dumps(totes)
             totedata.write(totepack)
         menustate = 0
@@ -62,7 +61,7 @@ while True:
         for tote in reversed(range(len(totes))):
             if totes[tote]['name'] == erasetote:
                 del totes[tote]
-        with open("totes.json", "w") as totedata:
+        with open("./Data/totes.json", "w") as totedata:
             totepack = json.dumps(totes)
             totedata.write(totepack)
     
@@ -71,4 +70,12 @@ while True:
         pickzone = input("Enter Zone: ")
         for item in zones:
             if item['location'] == pickzone:
+                print(item['location'])
+    #WIP
+
+    # Zone Scanner
+    if menustate == 5:
+        scannerZone = input("Enter Zone: ")
+        for item in zones:
+            if item['location'] == scannerZone:
                 print(item['location'])
